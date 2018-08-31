@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/databus23/guttle/group"
 	"github.com/go-kit/kit/log"
 	"github.com/hashicorp/yamux"
+	"github.com/oklog/run"
 )
 
 //ErrRedialAborted is returned by Client.Start when the configured
@@ -75,7 +75,7 @@ func NewClient(opts *ClientOptions) *Client {
 // Start the client and connects to the server
 func (c *Client) Start() error {
 
-	var g group.Group
+	var g run.Group
 	if c.options.ListenAddr != "" {
 		listener, err := net.Listen("tcp", c.options.ListenAddr)
 		if err != nil {

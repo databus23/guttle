@@ -8,9 +8,9 @@ import (
 	"os"
 	"sync"
 
-	"github.com/databus23/guttle/group"
 	"github.com/go-kit/kit/log"
 	"github.com/hashicorp/yamux"
+	"github.com/oklog/run"
 )
 
 //ServerOptions hold the configration of a tunnel server
@@ -98,7 +98,7 @@ func (s *Server) Start() error {
 		return fmt.Errorf("Failed to listen on hijack port: %s", err)
 	}
 
-	var g group.Group
+	var g run.Group
 
 	//tunnel listener
 	g.Add(
