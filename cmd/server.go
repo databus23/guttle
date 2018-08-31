@@ -43,6 +43,9 @@ func ServerCommand() *cobra.Command {
 				o.ServerOptions.ProxyFunc = guttle.StaticProxy(o.ProxyAddr)
 			}
 			server := guttle.NewServer(&o.ServerOptions)
+			if err := server.AddRoute("0.0.0.0/0"); err != nil {
+				return err
+			}
 			go func() {
 				sigs := make(chan os.Signal, 1)
 				signal.Notify(sigs, os.Interrupt, syscall.SIGTERM) // Push signals into channel

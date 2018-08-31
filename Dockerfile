@@ -1,4 +1,4 @@
-FROM golang:1.9.0-alpine3.6 as builder
+FROM golang:1.10.3-alpine3.8 as builder
 WORKDIR /go/src/github.com/databus23/guttle/
 RUN apk add --no-cache make
 COPY . .

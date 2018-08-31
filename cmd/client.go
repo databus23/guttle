@@ -8,6 +8,7 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 
 	"github.com/databus23/guttle"
 	"github.com/spf13/cobra"
@@ -37,7 +38,7 @@ func ClientCommand() *cobra.Command {
 					}
 				}
 				o.ClientOptions.Dial = func(network, addr string) (net.Conn, error) {
-					return tls.Dial(network, addr, tlsConfig)
+					return tls.DialWithDialer(&net.Dialer{Timeout: 10 * time.Second}, network, addr, tlsConfig)
 				}
 			}
 

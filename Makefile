@@ -17,4 +17,6 @@ image:
 test: image
 	docker run --rm -it --name guttle --cap-add NET_ADMIN -p 9090:9090 -v $(CURDIR)/scripts/:/scripts guttle /scripts/test.sh
 
+test-client: bin/$(GOOS)/guttle
+	bin/$(GOOS)/guttle client --server localhost:9090 --listen-addr localhost:8080
 
