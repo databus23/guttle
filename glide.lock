@@ -1,5 +1,5 @@
 hash: e0a547a1d0379165d7d19878469b70fc842b1d5bfa56dcb204dca2f9ef7dba9e
-updated: 2018-08-31T10:02:40.679836+02:00
+updated: 2018-08-31T10:12:28.688989+02:00
 imports:
 - name: github.com/cenkalti/backoff
   version: 80e08cb804a3eb3e576876c777e957e874609a9a
@@ -12,7 +12,7 @@ imports:
 - name: github.com/go-stack/stack
   version: 259ab82a6cad3992b4e21ff5cac294ccb06474bc
 - name: github.com/hashicorp/yamux
-  version: d1caa6c97c9fc1cc9e83bbe34d0603f9ff0ce8bd
+  version: cc6d2ea263b2471faabce371255777a365bf8306
 - name: github.com/inconshreveable/mousetrap
   version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
 - name: github.com/kr/logfmt
